@@ -1,0 +1,118 @@
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f2f5;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    #controls {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 90%;
+    }
+
+    #difficulty, #upload, button {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    #difficulty:hover, #upload:hover, button:hover {
+      border-color: #007bff;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px 20px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #move-count, #time-count {
+      font-weight: bold;
+      color: #333;
+    }
+
+    #high-scores {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    #puzzle-container {
+      display: grid;
+      gap: 2px;
+      width: min(90vw, 450px);
+      height: min(90vw, 450px);
+      margin: 0 auto;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .tile {
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .tile.dragging {
+      opacity: 0.7;
+      transform: scale(0.95);
+    }
+
+    @media (max-width: 600px) {
+      #controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      #difficulty, #upload, button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      #puzzle-container {
+        width: 95vw;
+        height: 95vw;
+      }
+    }
