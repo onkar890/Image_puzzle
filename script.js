@@ -11,7 +11,7 @@
     let moveCount = 0;
     let timeCount = 0;
     let timerInterval;
-    let imageURL = 'https://picsum.photos/450';
+    let imageURL = '';
 
     // Load saved difficulty from localStorage
     const savedDifficulty = localStorage.getItem('puzzleDifficulty');
